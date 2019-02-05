@@ -30,6 +30,7 @@ for i in hidden_layers:
     y_pred = clf.predict(X_test)
     score = accuracy_score(y_test,y_pred)
 
+
     print("DONE: ",score)
     results.append([i,score])
 

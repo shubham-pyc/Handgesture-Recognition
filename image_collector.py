@@ -26,7 +26,7 @@ class ImageCollector:
                             constants.NUMPY_FOLDER_PATH]
 
         '''
-        Create Image Folders if Not already present 
+        Create Defined Folders if Not already present 
         '''
         for _path in self.folder_list:
             if not os.path.exists(_path):

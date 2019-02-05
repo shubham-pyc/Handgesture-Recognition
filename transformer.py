@@ -28,7 +28,7 @@ def input_output_vector_constructor(folder_path,save=False,file_name="X"):
         if not os.path.exists(constants.NUMPY_FOLDER_PATH):
             os.makedirs(constants.NUMPY_FOLDER_PATH)
         np.save("{}{}".format(constants.NUMPY_FOLDER_PATH,file_name),X)
-        os.save("{}{}".format(constants.NUMPY_FOLDER_PATH,"y"))
+        np.save("{}{}".format(constants.NUMPY_FOLDER_PATH,"y"),y)
     return X,y
 
 def get_class_keys(folder_path,inverse=False):
@@ -54,5 +54,4 @@ def inverse_dict(directory):
     """
     return dict((v,k) for k,v in directory.iteritems())
 
-
-
+input_output_vector_constructor(constants.DEFAULT_OTSU_IMAGE_FOLDER_PATH,True)
