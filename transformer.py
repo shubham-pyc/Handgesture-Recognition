@@ -54,4 +54,3 @@ def inverse_dict(directory):
     """
     return dict((v,k) for k,v in directory.iteritems())
 
-input_output_vector_constructor(constants.DEFAULT_OTSU_IMAGE_FOLDER_PATH,True)

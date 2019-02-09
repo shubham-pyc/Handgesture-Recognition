@@ -5,6 +5,8 @@ import os
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pickle
+import cv2 as cv
+from transformer import get_class_keys
 class Recognizer:
     def __init__(self,debug=False):
         self.neural_network = None
@@ -45,7 +47,7 @@ class Recognizer:
 
 
                 if(str(choice) == 'y'):
-                    file_name = "Modal_{}-{:0.4f}".format("_".join(str(i) for i in layer),0.9998)
+                    file_name = "Modal_{}-{:0.4f}".format("_".join(str(i) for i in layer),score)
                     if(self.debug == True):
                         print(constants.DM_SAVE_MODAL.format(file_name))
                     pickle.dump(self.trained_modal,open(constants.NEURAL_NETWORKS_FOLDER_PATH+file_name,'wb'))
@@ -56,8 +58,44 @@ class Recognizer:
             if self.debug:
                 print(constants.DM_MODAL_ALREADY_TRAINED)
             return
+    def get_latest_modal(self):
+        dir = os.listdir(constants.NEURAL_NETWORKS_FOLDER_PATH)
+        if (len(dir) <1):
+            raise OSError(constants.MODAL_NOT_FOUND_ERROR_MESSAGE)
+        fileName = "{}{}".format(constants.NEURAL_NETWORKS_FOLDER_PATH,dir[0])
+        print fileName
+        modal = pickle.load(open(fileName,'rb'))
+        if not isinstance(modal,MLPClassifier):
+            raise TypeError(constants.MODAL_TYPE_ERROR_MESSAGE.format(fileName,constants.NEURAL_NETWORKS_FOLDER_PATH))
+        return modal
     def recognize(self):
-        pass
+        video = cv.VideoCapture(0)
+        key_mapping = get_class_keys(constants.DEFAULT_OTSU_IMAGE_FOLDER_PATH,inverse=True)
+        clf = self.get_latest_modal()
+
+        while True:
+            ret,frame = video.read()
+            cv.rectangle(frame,
+                         constants.DEFAULT_COORDINATES["first"],
+                         constants.DEFAULT_COORDINATES["second"],
+                         (255,0,0),0)
+            crop_image = frame[constants.DEFAULT_COORDINATES["second"][0]:constants.DEFAULT_COORDINATES["first"][0],
+                               constants.DEFAULT_COORDINATES["second"][1]:constants.DEFAULT_COORDINATES["first"][1]]
+            convert_grey = cv.cvtColor(crop_image,cv.COLOR_BGR2GRAY)
+            _,otsu = cv.threshold(convert_grey,220,255,cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
+            otsu = cv.resize(otsu,(50,50),interpolation=cv.INTER_AREA)
+            otsu = otsu.reshape(1,otsu.shape[0]*otsu.shape[1])
+            result = clf.predict(otsu)[0]
+            maximum = max(result)
+            index = [i for i,j in enumerate(result) if j==maximum]
+            message = key_mapping[index[0]]
+            cv.putText(frame,message,(0,50),cv.FONT_HERSHEY_COMPLEX,2,(255,255,255),2)
+            cv.imshow('Window',frame)
+            if cv.waitKey(1) & 0xFF == ord('q'):
+                break
+        video.release()
+        cv.destroyAllWindows()
+
 
 recognizer = Recognizer(debug=True)
-recognizer.train()
+recognizer.recognize()

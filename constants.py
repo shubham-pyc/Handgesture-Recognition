@@ -4,7 +4,8 @@ ARGUMENTS_TYPE_STRING_ERROR_MESSAGE = "Arguments should be of type String"
 LABEL_ALREADY_PRESENT_ERROR_MESSAGE = "Class/Label: {} already present."
 NO_LABEL_PRESENT_ERROR_MESSAGE = "Please add Class/Labels to the object first using add_classes method"
 FILE_NOT_FOUND_ERROR_MESSAGE = "No such file names {} found\n Please call transformer.input_output_vector_constructor with save=True parameter"
-
+MODAL_NOT_FOUND_ERROR_MESSAGE = "No Trained  Modal found, please train Neural Network first"
+MODAL_TYPE_ERROR_MESSAGE = "File {} is not a Neural Network Modal please delete all file in {} and train again"
 # FOLDERS PATHS
 MODALS_PATH = "modals/"
 NUMPY_FOLDER_PATH = "{}numpy/".format(MODALS_PATH)
@@ -35,3 +36,7 @@ DEFAULT_DELIMITER ="-"
 DEFAULT_HIDDEN_LAYER = (500,200)
 DEFAULT_INPUT_VECTOR_NAME = "X"
 DEFAULT_OUTPUT_VECTOR_NAME = "y"
+DEFAULT_COORDINATES = {
+    "first":(300,300),
+    "second":(100,100)
+}
