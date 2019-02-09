@@ -26,7 +26,7 @@ Inside the project folder run the following command to install the prerequisit p
 python setup.py
 ```
 ## Architecture Diagram
-![diagram](https://github.com/shubhamg2404/Handgesture-Recognition/blob/master/docs/diagrams/Architecture_1.0.jpg)
+![diagram](https://github.com/shubhamg2404/Handgesture-Recognition/blob/master/docs/diagrams/Architecture_v1.0.jpg)
 
 ## How to use
 ### 1) Data collection:
