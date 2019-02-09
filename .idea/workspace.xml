@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50d89f98-3e2f-478e-8900-4392451cafd2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NNTrainning.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Result.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/read.md" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/constants.py" afterPath="$PROJECT_DIR$/constants.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesture_recognizer.py" afterPath="$PROJECT_DIR$/gesture_recognizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transformer.py" afterPath="$PROJECT_DIR$/transformer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -367,10 +362,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="131" y="0" width="1765" height="1048" extended-state="1" />
-    <editor active="true" />
+    <frame x="131" y="0" width="1765" height="1048" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16141957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16141957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20526893" sideWeight="0.088723525" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24259056" sideWeight="0.91127646" order="2" side_tool="false" content_ui="tabs" />
