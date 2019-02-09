@@ -25,7 +25,10 @@ Inside the project folder run the following command to install the prerequisit p
 ```sh
 python setup.py
 ```
-## How to you
+## Architecture Diagram
+![diagram](https://github.com/shubhamg2404/Handgesture-Recognition/blob/master/docs/diagrams/Architecture.jpg)
+
+## How to use
 ### 1) Data collection:
 The framework comes prebuild with a library to collect hand gestures for training
 ```python
@@ -76,7 +79,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Shubham Gupta** - *Initial work* - [shubhamg204](https://github.com/shubhamg2404)
+* **Shubham Gupta** - *Initial work* - [shubhamg2404](https://github.com/shubhamg2404)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
