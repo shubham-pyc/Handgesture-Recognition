@@ -20,9 +20,13 @@ class Recognizer:
         self.hidden_layers = [constants.DEFAULT_HIDDEN_LAYER]
         self.trained_modal = None
         self.debug = debug
+        self.callback  = None
 
     def toggle_debug(self):
         self.debug = not self.debug
+
+    def register_callback(self,callback):
+        pass
 
     def train(self,force_train=False):
         if not self.is_trained or force_train:

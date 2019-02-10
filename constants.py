@@ -28,7 +28,8 @@ DM_MODAL_ALREADY_TRAINED = "The Modal is already trained.\nRecall this method wi
 DM_TRAIN_TEST_SPLIT_DONE = "Train test split done."
 DM_LEARNING_STARTED = "Learning Started with hidden layer: {}"
 DM_SAVE_MODAL = "Saving modal: {}"
-
+DM_INSTALLING_MODULE = "Installing: {}"
+DM_MODULE_ALREADY_INSTALLED = "{} already found"
 
 #MISCELANIOUS
 DEFAULT_SAMPLE_SIZE = 500
