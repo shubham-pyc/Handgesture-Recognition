@@ -21,6 +21,11 @@ git clone 'https://github.com/shubhamg2404/Handgesture-Recognition.git'
 ### Installing
 A step by step series of examples that tell you how to get a development env running
 
+Install pip, download [get-pip.py](https://bootstrap.pypa.io/get-pip.py)
+```
+python get-pip.py
+```
+
 Inside the project folder run the following command to install the prerequisit packages
 ```sh
 python setup.py
