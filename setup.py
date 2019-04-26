@@ -11,12 +11,9 @@ def install_packages(package,lib_name):
         pip.main(['install',lib_name])
 
 def main():
-    required_modules = ['sklearn','numpy','cv2','scipy']
-    lib_name = ['scikit-learn','numpy','opencv-python','scipy']
+    required_modules = {'sklearn':'scikit-learn','numpy':'numpy','cv2':'opencv-python','scipy':'scipy'}
 
-    for i in range(len(required_modules)):
-        install_packages(required_modules[i],lib_name[i])
-
-
+    for package,lib_name in required_modules.items():
+        install_packages(required_modules,lib_name)
 
 main()
